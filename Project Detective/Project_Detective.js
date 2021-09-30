@@ -1,36 +1,36 @@
 const prompt = require('prompt-sync')();
-console.log("Vamos jogar de detetive? Responda às perguntas para descobrir se você é 'Suspeito', 'Cúmplice', 'Assassino' ou 'Inocente'.");
+console.log("Let's play detective? Answer the questions to find out if you are 'Suspect', 'Accomplice', 'Murderer' or 'Innocent'.");
 console.log("-------------------------------------------------------------------------------------------------------------------")
-console.log("Você foi notificado a prestar informações sobre o seu paradeiro, pois era uma pessoa próxima da vítima..");
+console.log("You were asked to provide information about your whereabouts as you were a person close to the victim.");
 console.log("")
-let resposta = 0
-let pergunta1 = prompt("Telefonou para a vítima?[sim/não]").slice(0).toLowerCase();
-if (pergunta1 == 'sim') {
-    resposta += 1;
+let answer = 0
+let question1 = prompt("Did you call the victim?[yes/no]").slice(0).toLowerCase();
+if (question1 == 'yes') {
+    answer += 1;
 }
-let pergunta2 = prompt("Esteve no local do crime?[sim/não]").slice(0).toLowerCase();
-if (pergunta2 == 'sim') {
-    resposta += 1;
+let question2 = prompt("Were you at the crime scene?[yes/no]").slice(0).toLowerCase();
+if (question2 == 'yes') {
+    answer += 1;
 }
-let pergunta3 = prompt("Mora perto da vítima?[sim/não]").slice(0).toLowerCase();
-if (pergunta3 == 'sim') {
-    resposta += 1;
+let question3 = prompt("Do you live close to the victim?[yes/no]").slice(0).toLowerCase();
+if (question3 == 'yes') {
+    answer += 1;
 }
-let pergunta4 = prompt("Devia para a vítima?[sim/não]").slice(0).toLowerCase();
-if (pergunta4 == 'sim') {
-    resposta += 1;
+let question4 = prompt("Did you owe the victim something?[yes/no]").slice(0).toLowerCase();
+if (question4 == 'yes') {
+    answer += 1;
 }
-let pergunta5 = prompt("Já trabalhou com a vítima?[sim/não]").slice(0).toLowerCase();
-if (pergunta5 == 'sim') {
-    resposta += 1;
+let question5 = prompt("Have you ever worked with the victim?[yes/no]").slice(0).toLowerCase();
+if (question5 == 'yes') {
+    answer += 1;
 }
 
-if (resposta == 2) {
-    console.log("Você é 'Suspeito'.");
-} else if (resposta == 3 || resposta == 4) {
-    console.log("Você é 'Cúmplice'.");
-} else if (resposta == 5) {
-    console.log("Você é o 'Assassino'.");
+if (answer == 2) {
+    console.log("You are 'Suspect'.");
+} else if (answer == 3 || answer == 4) {
+    console.log("You are 'Accomplice'.");
+} else if (answer == 5) {
+    console.log("You are the 'Assassin'.");
 } else {
-    console.log("Voê é 'Inocente'.");
+    console.log("You are 'Innocent'.");
 };
