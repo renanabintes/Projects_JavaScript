@@ -14,8 +14,22 @@
 
 const prompt = require('prompt-sync')();
 
-let rodadas = prompt("Quantas rodadas irá jogar? ");
+// let rodadas = +prompt('Quantas rodadas irá jogar? ');
 
-for (i = 0; i < rodadas; i++) {
-    console.log (i);
-}
+// for(let i = 0; i < rodadas; i++) {
+   
+// }
+
+// let escolhaJogador = prompt('Escolha uma opção: [pedra, papel, tesoura');
+// let escolhaMáquina = prompt('[pedra, papel, tesoura]');
+// math.random(escolhaMáquina)
+
+let continuar = prompt('Gostaria de continuar jogando? [sim/não]')
+
+for(let i = 0; continuar == 'sim'; i++) {
+    console.log(i)
+    continuar = prompt('Não'('Encerrar o jogo.'))
+} 
+
+
+
