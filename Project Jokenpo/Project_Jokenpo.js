@@ -1,35 +1,84 @@
-// Utilizando os conceitos aprendidos até estruturas de repetição, crie um
-// programa que jogue pedra, papel e tesoura (Jokenpô) com você.
-// O programa tem que:
-// ● Permitir que eu decida quantas rodadas iremos fazer;
-// ● Ler a minha escolha (Pedra, papel ou tesoura);
-// ● Decidir de forma aleatória a decisão do computador;
-// ● Mostrar quantas rodadas cada jogador ganhou;
-// ● Determinar quem foi o grande campeão de acordo com a quantidade de
-// vitórias de cada um (computador e jogador);
-// ● Perguntar se o Jogador quer jogar novamente, se sim inicie volte a
-// escolha de quantidade de rodadas, se não finalize o programa
-
-// Você conhece o Jokenpô? É um jogo bem antigo que tem sua origem na China mas foi no Japão que recebeu esse nome “Jokenpô” e se popularizou para o mundo todo. Aqui em nosso país é conhecida como Pedra, Papel ou Tesoura. ... Pedra quebra Tesoura, Papel embrulha a Pedra e Tesoura corta papel.
+console.log('>>>>>>>>>>>>>>>>>>>>>>Você conhece o Jokenpô?<<<<<<<<<<<<<<<<<<<<<<\nÉ um jogo bem antigo que tem sua origem na China, mas foi no Japão\nque recebeu esse nome “Jokenpô” e se popularizou para o mundo todo.\nAqui em nosso país é conhecida como Pedra, Papel ou Tesoura.\n"Pedra quebra Tesoura, Papel embrulha a Pedra e Tesoura corta Papel"');
+console.log('\n----------------------------VAMOS JOGAR----------------------------');
 
 const prompt = require('prompt-sync')();
+let rodadas = +prompt('Quantas rodadas deseja jogar? ');
+var cont_jogador = 0
+var cont_computador = 0
+var empate = 0
+for(let i = 0; i < rodadas; i++) {
+console.log('\nVamos começar a rodada!');
+let computador = Math.floor(Math.random() * 3 + 1);
+console.log('[1] - Pedra');
+console.log('[2] - Papel');
+console.log('[3] - Tesoura');
+let escolha = +prompt('\nQual opção você escolhe(número): ');
+if (escolha == 1 && computador == 2) {
+cont_computador += 1;
+console.log(`Você escolheu [${escolha}] Pedra, e o computador escolheu [2] Papel.`);
+console.log("Você perdeu!!!.");
+}
+if (escolha == 1 && computador == 3) {
+cont_jogador += 1;
+console.log(`Você escolheu [${escolha}] Pedra, e o computador escolheu [3] Tesoura.`);
+console.log("Você ganhou!!!");
+}
+if (escolha == 2 && computador == 3) {
+cont_computador += 1;
+console.log(`Você escolheu [${escolha}] Papel, e o computador escolheu [3] Tesoura.`);
+console.log("Você perdeu!!!");
+}
+if (escolha == 2 && computador == 1) {
+cont_jogador += 1;
+console.log(`Você escolheu [${escolha}] Papel, e o computador escolheu [1] Pedra.`);
+console.log("Você ganhou!!!");
+}
+if (escolha == 3 && computador == 1) {
+cont_computador += 1;
+console.log(`Você escolheu [${escolha}] Tesoura, e o computador escolheu [1] Pedra.`);
+console.log("Você perdeu!!!");
+}
+if (escolha == 3 && computador == 2) {
+cont_jogador += 1;
+console.log(`Você escolheu [${escolha}] Tesoura, e o computador escolheu [1] Papel.`);
+console.log("Você ganhou!!!");
+}
+if (escolha == 1 && computador == 1) {
+empate += 1;
+console.log(`\nVocê escolheu [${escolha}] Pedra, e o computador escolheu [1] Pedra.`);
+console.log("Empate!!!");
+}
+if (escolha == 2 && computador == 2) {
+empate += 1;
+console.log(`\nVocê escolheu [${escolha}] Papel, e o computador escolheu [2] Papel.`);
+console.log("Empate!!!");
+}
+if (escolha == 3 && computador == 3) {
+empate += 1;
+console.log(`\nVocê escolheu [${escolha}] Tesoura, e o computador escolheu [3] Tesoura.`);
+console.log("Empate!!!");
+}
+}
+console.log(`Em ${rodadas} rodada(s)...`);
 
-// let rodadas = +prompt('Quantas rodadas irá jogar? ');
+console.log(`
+Você venceu ${cont_jogador} rodada(s).
+Você perdeu ${cont_computador} rodada(s).
+Você empatou ${empate} rodada(s).`
+);
+if (cont_jogador > cont_computador) {
+console.log("\nVocê foi o grande campeão!!!");
+} else if (cont_computador > cont_jogador) {
+console.log("\nA máquina superou você!!!");
+} else console.log("\nInfelizmente, ninguém ganhou!!!");
 
-// for(let i = 0; i < rodadas; i++) {
-   
-// }
-
-// let escolhaJogador = prompt('Escolha uma opção: [pedra, papel, tesoura');
-// let escolhaMáquina = prompt('[pedra, papel, tesoura]');
-// math.random(escolhaMáquina)
-
-let continuar = prompt('Gostaria de continuar jogando? [sim/não]')
-
-for(let i = 0; continuar == 'sim'; i++) {
-    console.log(i)
-    continuar = prompt('Não'('Encerrar o jogo.'))
-} 
-
-
+while (true) {
+let pergunta = prompt('Vamos jogar novamente?[sim/não]').slice(0,1).toLowerCase();
+if (pergunta == 'sim'){
+continue;
+} else {
+console.log('Um jogo só acaba quando termina.');
+break;
+}
+}
 
