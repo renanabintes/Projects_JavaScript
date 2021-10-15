@@ -20,4 +20,3 @@ infJogo.sort((a, b) => {
 console.log(infJogo);
 
 console.log("\n O campeão é "+ infJogo[0]["nome"]);
-
