@@ -20,3 +20,6 @@ infJogo.sort((a, b) => {
 console.log(infJogo);
 
 console.log("\n O campeão é "+ infJogo[0]["nome"]);
+// -1 ponto: Ordenar esses objetos, sabendo que o vencedor tirou o maior número no dado
+// >> vc inverteu usou rodadas no for errado
+// -2 pontos: Mostrar no final qual jogador ganhou mais rodadas e foi o grande campeão
