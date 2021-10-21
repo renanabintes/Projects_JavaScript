@@ -10,10 +10,11 @@
 
 const prompt = require('prompt-sync')();
 
-console.log("Bem vindos ao Campo de Batalha - (Viva ou Morra Lutando)");
+console.log("Bem vindos ao Jogo Batalha de  - (Viva ou Morra Lutando)");
 console.log("Você está em um campo de batalha. Lutando por sua vida e de seus compatriotas.");
+console.log("================================================================")
 let nome = prompt("Digite o nome de seu(sua) personagem: ");
-
+console.log("================================================================")
 let avancaTempo = (horaAtual) => {
     return horaAtual += 1;
 }
@@ -22,24 +23,26 @@ relogio.hora = 8
 relogio.hora = avancaTempo(relogio.hora);
 
 let main = () => {
+    console.log();
     console.log("São 8:00 da manhã, e está tudo calmo na trincheira.");
     console.log(`${nome} acordou e foi verificar os suprimentos para sua alimentação diáriao da manhã.`);
     console.log("Depois de fazer sua refeição matinal. Vamos escolher o equipamento para mais um dia de luta.");
     console.log("Você tem direito de escolher um item da lista para batalha.");
     let itens = ["Pistola", "Fuzil","Bolsa de remédios", "Bolsa de munição"];
-    console.log("Escolha um item abaixo:");
+    console.log(`
+    Escolha um item abaixo:
+    `);
     for (let i = 0; i < itens.length; i++) {
         console.log(`[${i}] - ${itens[i]}`);
     }
     let escolha = prompt("Item (número): ");
     itemEscolhido = itens[escolha];
     console.log("Item escolhido: ", itemEscolhido);
-    console.log(relogio.hora + ':00');
-    let ataque = () => {
+    let armaAtaque = () => {
         console.log("Sabia escolha para ficar na linha de frente da batalha.");
     }
     if (itemEscolhido === "Pistola" || itemEscolhido === "Fuzil") {
-        ataque();
+        armaAtaque();
     }
     let abastecer = () => {
         console.log("Ótima escolha para ficar na batalha mais recuado");
@@ -47,8 +50,9 @@ let main = () => {
     if (itemEscolhido === "Bolsa de remédios" || itemEscolhido === "Bolsa de munição") {
         abastecer();
     }
-    console.log(relogio.hora + ':00');
-    console.log("Escolhido o equipamento, vamos para batalha.");
+    console.log("Escolhido o equipamento.");
+    console.log('São ' + relogio.hora + ':00.');
+    console.log("Vamos para batalha.");
     console.log("Sua tropa tem que avançar a linha inimiga para conquistar território.");
     console.log("Seu superior passa as ordens para você.");
     let linhaFrente = prompt(`
