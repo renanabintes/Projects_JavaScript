@@ -47,7 +47,6 @@ let main = () => {
     if (itemEscolhido === "Bolsa de remédios" || itemEscolhido === "Bolsa de munição") {
         abastecer();
     }
-    relogio.hora = avancaTempo(relogio.hora);
     console.log(relogio.hora + ':00');
     console.log("Escolhido o equipamento, vamos para batalha.");
     console.log("Sua tropa tem que avançar a linha inimiga para conquistar território.");
@@ -87,9 +86,12 @@ let main = () => {
     let frontal = () => {
         console.log("Você conseguiu sobreviver mais um dia. Mas infelizmente o batalhão não conseguiu avançar a linha inimiga e teve muitas baixas, então decidiram recuar.")
     }
+    if (ataque == 2) {
+        frontal();
+    }
     console.log(relogio.hora + ':00');
     console.log("'FIM DE JOGO'")
-    console.log("Você escolheu defender sua trincheira com os outros soldades.");
+    console.log("Você escolheu defender sua trincheira com os outros soldados.");
     console.log("De repente você é supreendido, com um aataque surpresa pelos soldados inimigos.");
     let defesa = prompt(`
     ${nome} escolha uma opção:
@@ -100,35 +102,37 @@ let main = () => {
         console.log("Você sobreviveu a mais um dia, mesmo sendo um prisionerio de guerra.");
     }
     if (defesa == 1) {
-        render()
+        render();
     }
     let resistir = () => {
         console.log("Você infelizmente não sobreviveu ao ataque dos inimigos.");
     }
     if (defesa == 2) {
-        resistir()
+        resistir();
     }
     console.log(relogio.hora + ':00');
-    console.log("'FIM DE JOGO'")
+    console.log("'FIM DE JOGO'");
     console.log("Seu superior passa as ordens para você.");
     let linhaPosterior = prompt(`
-    ${nome} vai ficar na linha de trás como abastecimento:
-    [1] - Ofensivo
-    [2] - Defensivo
+    ${nome} vai ficar no municiamento dos soldados:
+    [1] - Ataque rápido
+    [2] - Trincheira
     `);
-    let equipeOfensivo = () => {
-        console.log("Atacar e aniquilar o inimigo.");
+    let ataqueRapido = () => {
+        console.log("Infelizmente foi surpreendido por uma mina terretre e não sobreviveu. Seu batalhão batalhão teve que recuar devdio aa linha inimiga estar bem fortificada.");
     }
     if (linhaPosterior == 1) {
-        equipeOfensivo();
+        ataqueRapido();
     }
-    let equipeDefensivo = () => {
-        console.log("Defender para contra-atacar.");
+    let trincheira = () => {
+        console.log("Você ");
     }
     if (linhaPosterior == 2) {
-        equipeDefensivo;
+        trincheira();
     }
     console.log(relogio.hora + ':00');
+    console.log("'FIM DE JOGO'");
 }
 
 main();
+// fortificações/bases
