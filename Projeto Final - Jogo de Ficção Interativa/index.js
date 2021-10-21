@@ -38,6 +38,7 @@ let main = () => {
     let escolha = prompt("Item (número): ");
     itemEscolhido = itens[escolha];
     console.log("Item escolhido: ", itemEscolhido);
+    console.log(relogio.hora + ':00');
     let armaAtaque = () => {
         console.log("Sabia escolha para ficar na linha de frente da batalha.");
     }
@@ -45,7 +46,6 @@ let main = () => {
         armaAtaque();
     }
     console.log("Escolhido o equipamento.");
-    console.log('São ' + relogio.hora + ':00.');
     console.log("Vamos para batalha.");
     console.log("Sua tropa tem que avançar a linha inimiga para conquistar território.");
     console.log("Seu superior passa as ordens para você.");
@@ -54,6 +54,7 @@ let main = () => {
     [1] - Ofensivo
     [2] - Defensivo
     `);
+    console.log(relogio.hora + ':00');
     let ataqueOfensivo = () => {
         console.log("Atacar e aniquilar o inimigo.");
     }
@@ -68,6 +69,7 @@ let main = () => {
     [1] - Penetração (Visa romper uma posição defensiva inimiga para atingir um objectivo na retaguarda desta.)
     [2] - Frontal (Forma de manobra ofensiva em que se ataca o inimigo ao longo de toda a frente.)
     `);
+    console.log(relogio.hora + ':00');
     let penetracao = () => {
         console.log("Seu batalhão conseguiu atingir o objetivo, mas infelizmente você foi ferido em combate e não resistiu aos ferimentos.");
         console.log("'FIM DE JOGO'");
@@ -96,6 +98,7 @@ let main = () => {
     [1] - Render (É a renúncia ao controle sobre território, fortificações para uma outra potência.)
     [2] - Resistir (Resistir aos ataques do inimigo.)
     `);
+    console.log(relogio.hora + ':00');
     let render = () => {
         console.log("Você sobreviveu a mais um dia, mesmo sendo um prisionerio de guerra.");
         console.log("'FIM DE JOGO'");
@@ -110,8 +113,6 @@ let main = () => {
     if (defesa == 2) {
         resistir();
     }
-    console.log(relogio.hora + ':00');
-    console.log(relogio.hora + ':00');
     let abastecer = () => {
         console.log("Ótima escolha para ficar na batalha mais recuado");
     }
@@ -128,6 +129,7 @@ let main = () => {
     [1] - Ataque rápido
     [2] - Trincheira
     `);
+    console.log(relogio.hora + ':00');
     let ataqueRapido = () => {
         console.log("Infelizmente foi surpreendido por uma mina terretre e não sobreviveu. Seu batalhão batalhão teve que recuar devdio aa linha inimiga estar bem fortificada.");
         console.log("'FIM DE JOGO'");
@@ -142,9 +144,6 @@ let main = () => {
     if (linhaPosterior == 2) {
         trincheira();
     }
-    console.log(relogio.hora + ':00');
-    console.log("'FIM DE JOGO'");
 }
-
 main();
 
