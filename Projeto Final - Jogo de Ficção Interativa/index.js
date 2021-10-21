@@ -10,8 +10,6 @@
 
 const prompt = require('prompt-sync')();
 
-// , 1 cranberries desidratadas, 1 cidra de maçã (sem álcool), 1 manteiga de amendoim e biscoitos cream cracker. Como prato principal, há pasta com vegetais em molho picante de tomate.")
-
 console.log("Bem vindos ao Campo de Batalha - (Viva ou Morra Lutando)");
 console.log("Você está em um campo de batalha. Lutando por sua vida e de seus compatriotas.");
 let nome = prompt("Digite o nome de seu(sua) personagem: ");
@@ -25,19 +23,10 @@ relogio.hora = avancaTempo(relogio.hora);
 
 let main = () => {
     console.log("São 8:00 da manhã, e está tudo calmo na trincheira.");
-    console.log(`${nome} acordou e foi ver o que tinha de suprimnento para o café da manhã.`);
-    console.log("Você tem que escolher um único tipo de suprimento para sua alimentação por refeição diária");
-    let cafe = prompt(`
-    Você escolhe: 
-    [1] - bolo integral de amêndoas;
-    [2] - cranberries desidrtadas;
-    `);
-    relogio.hora = avancaTempo(relogio.hora);
-    console.log(relogio.hora + ':00');
+    console.log(`${nome} acordou e foi verificar os suprimentos para sua alimentação diáriao da manhã.`);
     console.log("Depois de fazer sua refeição matinal. Vamos escolher o equipamento para mais um dia de luta.");
-    console.log("Você tem direito de escolher um item da lista.");
-    console.log("Cuidado com suas escolhas, pois não é todo equipamento que será útil na linha de frente da batalha.")
-    let itens = ["Bolsa de remédios", "Pistola", "Fuzil", "Bolsa de munição"];
+    console.log("Você tem direito de escolher um item da lista para batalha.");
+    let itens = ["Pistola", "Fuzil","Bolsa de remédios", "Bolsa de munição"];
     console.log("Escolha um item abaixo:");
     for (let i = 0; i < itens.length; i++) {
         console.log(`[${i}] - ${itens[i]}`);
@@ -45,48 +34,84 @@ let main = () => {
     let escolha = prompt("Item (número): ");
     itemEscolhido = itens[escolha];
     console.log("Item escolhido: ", itemEscolhido);
+    console.log(relogio.hora + ':00');
+    let ataque = () => {
+        console.log("Sabia escolha para ficar na linha de frente da batalha.");
+    }
        if (itemEscolhido === "Pistola" || itemEscolhido === "Fuzil") {
            ataque();
         }
-    let ataque = () => {
-        console.log("Gostaria de matar alguém?");
+    let abastecer = () => {
+        console.log("Ótima escolha para ficar na batalha mais recuado");
     }
         if (itemEscolhido === "Bolsa de remédios" || itemEscolhido === "Bolsa de munição") {
             abastecer();
         }
-    let abastecer = () => {
-        console.log("Gostaria de matar alguém?");
-    }
     relogio.hora = avancaTempo(relogio.hora);
     console.log(relogio.hora + ':00');
     console.log("Escolhido o equipamento, vamos para batalha.");
     console.log("Sua tropa tem que avançar a linha inimiga para conquistar território.");
     console.log("Seu superior passa as ordens para você.");
     let linhaFrente = prompt(`
-    ${nome} vai ficar na linha de frente:
-    [1] - Sim
-    [2] - Não
+    ${nome} vai ficar na linha de frente como ataque:
+    [1] - Ofensivo
+    [2] - Defensivo
     `);
-    if(linhaFrente == 1) {
-        console.log("Vamos para a linha de frente.");
-    } else if (linhaFrente == 2) {
-        console.log("Vamos ajudar os soldados da linha de frente.")
+    let ataqueOfensivo = () => {
+        console.log("Atacar e aniquilar o inimigo.");
     }
-    relogio.hora = avancaTempo(relogio.hora);
+        if (linhaFrente == 1) {
+            ataqueOfensivo();
+        }
+    let defesaPosicao = () => {
+        console.log("Defender para contra-atacar.");
+    }
+        if (linhaFrente == 2) {
+            defesaPosicao();
+        }
     console.log(relogio.hora + ':00');
-    console.log("Você está na linha de frente da batalha.")
-    let atacar = prompt(`
-    ${nome} vai atacar?
-    [1] - Sim
-    [2] - Não
+    console.log("Você escolheu avançar com os outros bravos soldados.");
+    console.log("");
+
+    console.log("Você escolheu defender sua trincheira com os outros soldades.");
+    console.log("De repente você é supreendido, com um aataque surpresa pelos soldados inimigos.");
+    let defesa = prompt(`
+    ${nome} escolha uma opção:
+    [1] - Render
+    [2] - Revidar
     `);
-    if (atacar == 1) {
-        console.log("Avance as linhas inimigas.")
-    } else if (atacar == 2) {
-        console.log("Aguarde a tropa inimiga atacar.")
+    let render = () => {
+        console.log("Você sobreviveu a mais um dia, mesmo sendo um prisionerio de guerra.");
     }
-    console.log("Você escolheu se defender de um ataque")
-    relogio.hora = avancaTempo(relogio.hora);
+        if (defesa == 1) {
+            render()
+        }
+    let revidar = () => {
+        console.log("Você infelizmente não sobreviveu ao ataque dos inimigos.");
+    }
+        if (defesa == 2) {
+            revidar()
+        }
+    console.log(relogio.hora + ':00');
+    console.log("'FIM DE JOGO'")
+    console.log("Seu superior passa as ordens para você.");
+    let linhaPosterior = prompt(`
+    ${nome} vai ficar na linha de trás como abastecimento:
+    [1] - Ofensivo
+    [2] - Defensivo
+    `);
+    let equipeOfensivo = () => {
+        console.log("Atacar e aniquilar o inimigo.");
+    }
+        if (linhaPosterior == 1) {
+            equipeOfensivo();
+        }
+    let equipeDefensivo = () => {
+        console.log("Defender para contra-atacar.");
+    }
+        if (linhaPosterior == 2) {
+            equipeDefensivo;
+        }
     console.log(relogio.hora + ':00');
 }
 
