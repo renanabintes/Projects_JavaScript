@@ -38,15 +38,15 @@ let main = () => {
     let ataque = () => {
         console.log("Sabia escolha para ficar na linha de frente da batalha.");
     }
-       if (itemEscolhido === "Pistola" || itemEscolhido === "Fuzil") {
-           ataque();
-        }
+    if (itemEscolhido === "Pistola" || itemEscolhido === "Fuzil") {
+        ataque();
+    }
     let abastecer = () => {
         console.log("Ótima escolha para ficar na batalha mais recuado");
     }
-        if (itemEscolhido === "Bolsa de remédios" || itemEscolhido === "Bolsa de munição") {
-            abastecer();
-        }
+    if (itemEscolhido === "Bolsa de remédios" || itemEscolhido === "Bolsa de munição") {
+        abastecer();
+    }
     relogio.hora = avancaTempo(relogio.hora);
     console.log(relogio.hora + ':00');
     console.log("Escolhido o equipamento, vamos para batalha.");
@@ -60,38 +60,54 @@ let main = () => {
     let ataqueOfensivo = () => {
         console.log("Atacar e aniquilar o inimigo.");
     }
-        if (linhaFrente == 1) {
-            ataqueOfensivo();
-        }
+    if (linhaFrente == 1) {
+        ataqueOfensivo();
+    }
     let defesaPosicao = () => {
         console.log("Defender para contra-atacar.");
     }
-        if (linhaFrente == 2) {
-            defesaPosicao();
-        }
+    if (linhaFrente == 2) {
+        defesaPosicao();
+    }
     console.log(relogio.hora + ':00');
     console.log("Você escolheu avançar com os outros bravos soldados.");
-    console.log("");
-
+    console.log("Você e seu batalhão vão fazer um ataque rápido com avanço e recuo no terreno para a aniquilação do inimigo.");
+    console.log("Nesse ataque você terá duas escolhas.");
+    let ataque = prompt(`
+    ${nome} escolha uma opção:
+    [1] - Penetração (Visa romper uma posição defensiva inimiga para atingir um objectivo na retaguarda desta.)
+    [2] - Frontal (Forma de manobra ofensiva em que se ataca o inimigo ao longo de toda a frente.)
+    `);
+    let penetracao = () => {
+        console.log("Seu batalhão conseguiu atingir o objetivo, mas infelizmente você foi ferido em combate e não resistiu aos ferimentos.");
+    }
+    if (ataque == 1) {
+        penetracao();
+    }
+    let frontal = () => {
+        console.log("Você conseguiu sobreviver mais um dia. Mas infelizmente o batalhão não conseguiu avançar a linha inimiga e teve muitas baixas, então decidiram recuar.")
+    }
+    console.log(relogio.hora + ':00');
+    console.log("'FIM DE JOGO'")
     console.log("Você escolheu defender sua trincheira com os outros soldades.");
     console.log("De repente você é supreendido, com um aataque surpresa pelos soldados inimigos.");
     let defesa = prompt(`
     ${nome} escolha uma opção:
-    [1] - Render
-    [2] - Revidar
+    [1] - Render (É a renúncia ao controle sobre território, fortificações para uma outra potência.)
+    [2] - Resistir (Resistir aos ataques do inimigo.)
     `);
     let render = () => {
         console.log("Você sobreviveu a mais um dia, mesmo sendo um prisionerio de guerra.");
     }
-        if (defesa == 1) {
-            render()
-        }
-    let revidar = () => {
+    if (defesa == 1) {
+        render()
+    }
+    let resistir = () => {
         console.log("Você infelizmente não sobreviveu ao ataque dos inimigos.");
     }
-        if (defesa == 2) {
-            revidar()
-        }
+    if (defesa == 2) {
+        resistir()
+    }
     console.log(relogio.hora + ':00');
     console.log("'FIM DE JOGO'")
     console.log("Seu superior passa as ordens para você.");
@@ -103,15 +119,15 @@ let main = () => {
     let equipeOfensivo = () => {
         console.log("Atacar e aniquilar o inimigo.");
     }
-        if (linhaPosterior == 1) {
-            equipeOfensivo();
-        }
+    if (linhaPosterior == 1) {
+        equipeOfensivo();
+    }
     let equipeDefensivo = () => {
         console.log("Defender para contra-atacar.");
     }
-        if (linhaPosterior == 2) {
-            equipeDefensivo;
-        }
+    if (linhaPosterior == 2) {
+        equipeDefensivo;
+    }
     console.log(relogio.hora + ':00');
 }
 
